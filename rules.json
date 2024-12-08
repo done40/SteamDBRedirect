@@ -9,7 +9,7 @@
       }
     },
     "condition": {
-      "urlFilter": "steamdb.com",
+      "urlFilter": "steamdb.*",
       "resourceTypes": ["main_frame"]
     }
   }

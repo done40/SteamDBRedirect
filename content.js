@@ -1,30 +1,4 @@
-if (window.location.hostname === "steamdb.info") {
-  if (document.referrer && !document.referrer.includes("steamdb.info")) {
-    function createNotification() {
-      const notification = document.createElement("div");
-      notification.classList.add("steamdb-redirect-notification");
-
-      const checkmark = document.createElement("span");
-      checkmark.textContent = "✔️";
-      checkmark.classList.add("checkmark");
-      notification.appendChild(checkmark);
-
-      const message = document.createElement("span");
-      message.textContent = "You have been redirected to steamdb.info 👍";
-      message.classList.add("message");
-      notification.appendChild(message);
-
-      document.body.appendChild(notification);
-
-      setTimeout(() => {
-        notification.remove();
-      }, 3000);
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", createNotification);
-    } else {
-      createNotification();
-    }
-  }
+if (window.location.hostname !== "steamdb.info") {
+  const newUrl = "https://steamdb.info" + window.location.pathname + window.location.search + window.location.hash;
+  window.location.replace(newUrl);
 }

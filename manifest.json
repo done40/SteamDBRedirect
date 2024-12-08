@@ -1,24 +1,31 @@
 {
   "manifest_version": 3,
   "name": "SteamDB Redirect",
-  "version": "1.3",
-  "description": "Redirect any steamdb URL to steamdb.info.",
-  "permissions": ["declarativeNetRequest"],
-  "host_permissions": ["*://steamdb.com/*"],
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "redirectRules",
-        "enabled": true,
-        "path": "rules.json"
-      }
-    ]
-  },
+  "description": "Redirects SteamDB URLs to steamdb.info for consistency.",
+  "version": "1.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://steamdb.com/*",
+    "https://steamdb.com/*",
+    "http://steamdb.net/*",
+    "https://steamdb.net/*",
+    "http://steamdb.info/*",
+    "https://steamdb.info/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://steamdb.info/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+      "matches": [
+        "http://steamdb.com/*",
+        "https://steamdb.com/*",
+        "http://steamdb.net/*",
+        "https://steamdb.net/*",
+        "http://steamdb.info/*",
+        "https://steamdb.info/*"
+      ],
+      "js": ["content.js"]
     }
   ]
 }

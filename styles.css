@@ -1,0 +1,38 @@
+.steamdb-redirect-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #1c1c1e;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2147483647;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.steamdb-redirect-notification .checkmark {
+  color: #4caf50;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.steamdb-redirect-notification .message {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

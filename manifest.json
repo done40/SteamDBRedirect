@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "SteamDB Redirect",
+  "version": "1.2",
+  "description": "Redirect steamdb.com to steamdb.info with a notification.",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://steamdb.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "redirectRules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://steamdb.info/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

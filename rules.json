@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "https://steamdb.info"
+      }
+    },
+    "condition": {
+      "urlFilter": "steamdb.com",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
